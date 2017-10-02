@@ -45,4 +45,13 @@ with open('F:\Py_projects\Stepic_course\datasets\dataset_3363_2.txt') as inf:
 with open('F:\Py_projects\Stepic_course\datasets\out.txt', 'w') as outf:
     outf.write(char_int(a))
 
-
+#Это решение понравилось
+# with open('dataset_3363_2.txt', 'r') as f:
+#     s = f.readline().strip()
+# i = 0
+# while i < len(s):
+#     j = i + 1
+#     while j < len(s) and s[j].isdigit():
+#         j += 1
+#     print(s[i] * int(s[i+1:j]), end='')
+#     i = j
