@@ -4,11 +4,45 @@
 # Запишите полученный текст в файл и прикрепите его, как ответ на это задание.
 #
 # В исходном тексте не встречаются цифры, так что код однозначно интерпретируем.
+#
 
+
+def char_int(x):
+    result = ''
+    count = 1
+    dig = ''
+    f = False
+    i = 0
+    #for i in range(len(x)):
+    while i < len(x):
+        if x[i] in '1234567890': #если x[i] - число
+            count = 0
+            while (x[i] in '1234567890'): # идем дальше, ищем числа
+                if count == 0:
+                    j = i - 1  # запоминаем каким было последнее и с буквой
+                count += 1 #считаем количество чисел
+                dig += str(x[i]) #запоминаем цифру в виде строки для соединения нескольких цифр в одну
+                if i < len(x)-1: #проверяем на выход из диапазона списка
+                    i += 1
+                else:
+                    f = True # дошли до конца. выходить из for.
+                    break
+            result += str(x[j]) * int(dig)
+            dig = ''
+        if f == True:
+            break
+        i += 1
+    return result
+
+# a = input()
+# a = list(a)
 with open('F:\Py_projects\Stepic_course\datasets\dataset_3363_2.txt') as inf:
-    for line in inf:
-        line = line.strip()
-        a = list(line)
-print(a)
+     for line in inf:
+         line = line.strip()
+         a = list(line)
+# print(line)
+# print(char_int(a))
+with open('F:\Py_projects\Stepic_course\datasets\out.txt', 'w') as outf:
+    outf.write(char_int(a))
 
-#проверяю число-не число текущий символ и следующий, если текущий не последний
+
