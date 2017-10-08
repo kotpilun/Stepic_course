@@ -1,5 +1,9 @@
+d = ''
+with open('F:\Py_projects\Stepic_course\datasets\dataset_3363_3.txt') as inf:
+   for line in inf:
+        d += line.strip()
 a = []
-a = input().split()
+a = d.lower().split()
 b = {}
 mlist = []
 for i in a:
@@ -7,5 +11,4 @@ for i in a:
 for i in b:
    if b.get(i) == max(b.values()):
        mlist.append(i)
-c = max(b.values())
 print(min(mlist), b[min(mlist)])

@@ -63,3 +63,4 @@ for i in s:
     if not i.isdigit(): d.append(i)
     else: d[-1] += i
 print(*[i[0]*int(i[1:]) for i in d], sep='')
+print(d)
